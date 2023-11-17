@@ -111,11 +111,10 @@ A API do Discogs para um uso com todas as suas funcionalidades requer a geraçã
 
 
 ## 🛠 Tecnologias
-![](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 As seguintes ferramentas foram usadas na construção do projeto:
 - Python
@@ -126,125 +125,55 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - MongoDB
 
 ## 📌 Endpoints da API
-### Cadastrar usuário:
+### Obter lista de discos de vinil:
 
-**POST** `/usuario`
-- Cria uma nova conta de usuário.
-- A requisição é feita com um objeto Json informando o nome, email e senha do usuário, conforme o exemplo:
+**GET** `/vinyls`
+- Este endpoint retorna uma lista de vinis para um artista específico.
+- A requisição é feita com um objeto Json informando o nome do artista, conforme o exemplo:
 
     ```bash
     {
-    "nome": "Gilberto Gil", //exemplo
-    "email": "gilbertogil@email.com", //exemplo
-    "senha": "123456", //exemplo
+    "artist": "Jorge Ben Jor" //exemplo
+    }
+    ```
+  #### Salvar consulta
+  - Para salvar armazenar a consulta no banco de dados, usar o parâmetro 'save=db' na rota, conforme exemplo:
+    ```bash
+    {
+    http://localhost:5000/vinyls?save=db
     }
     ```
 
 
-### Login:
+### Obter minobiografia do artista:
 
-**POST** `/login`
+**GET** `/minibio`
 
-- Realiza o login do usuário com base nas credenciais fornecidas.
-- A requisição é feita com um objeto Json informando email e senha do usuário, conforme o exemplo:
+- Este endpoint retorna uma resumo das informações de um artista.
+- A requisição é feita com um objeto Json informando o nome do artista, conforme o exemplo:
   
     ```bash
     {
-    "email": "itamar_assumpcao@email.com", //exemplo
-    "senha": "123456", //exemplo
+    "artist": "Elza Soares" //exemplo
     }
     ```
-
-___
-  > As rotas a seguir exigem o token de autenticação do usuário logado, a intormação deve se informada no header em formato Bearer Token
-  > 
-___
-
-### Detalhar usuário:
-
-**GET** `/usuario`
-
-- Detalha os dados do usuário logado.
-
-### Atualizar usuário:
-
-**PUT** `/usuario`
-- Atualiza os dados do usuário logado
-- Analisa se o e-mail inserido está sendo utilizado por outro usuário e impede caso essa situação seja verificada
-- A requisição é feita com um objeto Json informando nome, email ou senha do usuário, conforme o exemplo:
-  
-    ```bash
-    {
-    "nome": "Jorge Ben Jor", //exemplo
-    "email": "jorge_ben@email.com", //exemplo
-    "senha": "123456", //exemplo
-    }
-    ```
-### Listar categorias:
-**GET** `/categoria`
-- Lista os nomes de todas as categorias de transações cadastradas na Sem$ufoco.
-
-### Listar transações:
-**GET** `/transacao`
-- Lista todas as transações cadastradas do usuário.
-- Poderá ser passado parâmetro tipo query para filtrar transações, conforme o exemplo:
-  
-  <pre>
-    GET/transacao?filtro[]=roupas&filtro[]=salários
-  </pre>
-
-### Detalhar transações:
-**GET** `/transacao/:id`
-- Detalha uma transação específica a partir do seu id de cadastro;
-- O id da transação deverá ser passado como parâmetro de rota.
-
-### Cadastrar transação:
-**POST** `/transacao`
-- Registra uma nova transação.
-- A requisição é feita com um objeto Json informando a descrição, valor, data, id da categoria e tipo, conforme o exemplo:
-
-    ```bash
-    {
-    "descricao": "Salário", //exemplo
-    "valor": 500000, //exemplo (valor em centavos)
-    "data": "2022-03-24T15:30:00.000Z", //exemplo
-    "categoria_id": 6,
-    "tipo": "entrada 
-    }
-    ```
-### Atualizar transação 
-**PUT** `/transacao/:id`
-- Atualiza uma transação cadastrada
-- O id da transação deverá ser passado como parâmetro de rota.
-
-### Excluir transação:
-**DELETE** `/transacao/:id`
-- Exclui uma transação cadastrada
-- O id da transação deverá ser passado como parâmetro de rota.
-
-### Obter extrato de transações:
-**GET** `/transacao/extrato`
-- Exibe o extrato financeiro do usuário.
 
 
 ## 🔎 Implementações futuras
 
-- [ ] Incluir verificações para validação de entradas utilizando a biblioteca Joi
-- [ ] Refatorar as querys utilizando a biblioteca QueryBuilder Knex
-- [ ] Utilizar a biblioteca DotEnv para criação das variáveis de ambiente
+- [ ] Incluir novas verificações
+- [ ] Criar middlewares e funções utils
 - [ ] Fazer o deploy da API 
 
 
 
 ## 📚 Referências
-- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Node.js](https://nodejs.org/pt-br/docs) 
-- [Express](https://expressjs.com/pt-br/4x/api.html)
-- [PostgreSQL](https://www.postgresql.org/docs/)
-- [Node-postgres (pg)](https://node-postgres.com/)
-- [Bcrypt](https://www.npmjs.com/package/bcrypt)
-- [JSON Web Tokens](https://jwt.io/introduction)
-- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Python](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) 
+- [Pandas](https://pandas.pydata.org/docs/)
+- [Beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
+- [MongoDB](https://www.mongodb.com/docs/)
+- [Discogs API](https://www.discogs.com/developers)
 - [Git](https://git-scm.com/docs)
 
 
