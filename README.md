@@ -34,11 +34,11 @@
   
 ## 📂 Sobre o projeto
 
-O Vinyhunter foi desenvolvido como desafio do módulo de Introdução à Engenharia de Dados do Programa FAST - Formação Acelerada em Análise e visualização de Dados - CESAR School. O projeto foi criado para aplicar os conceitos de ETL (Extract, Transform e Load) e Web Scraping.
+A Vinyhunter API foi desenvolvida como trabalho final do módulo de Introdução à Engenharia de Dados do Programa FAST - Formação Acelerada em Análise e visualização de Dados - CESAR School. O projeto foi criado para aplicar os conceitos de ETL (Extract, Transform e Load) e Web Scraping.
 
-O projeto usa a API do Discogs como fonte de dados para extrair informações sobre os discos que possuam versões na mídia vinil exixtentes com base no artista consultado. Em uma segunda etapa, é feito o tratamento da consulta obtida e a formatação com as informações mais relevantes (id, título, gravadora, ano e formato e o país onde o disco foi produzido). Na última etapa, o resultado pode ser exibido em um formato JSON ou armazenado em banco de dados NoSQL MongoDB.
+O projeto usa a API do Discogs como fonte de dados para extrair informações sobre os discos que possuam versões na mídia vinil existentes com base no artista consultado. Em uma segunda etapa, é feito o tratamento da consulta obtida e a formatação com as informações mais relevantes (id, título, gravadora, ano e formato e o país onde o disco foi produzido). Na última etapa, o resultado pode ser exibido em um formato JSON ou armazenado em banco de dados NoSQL MongoDB.
 
-A Vinylhunter também permite ao usuário obter uma mini bigrafia do artista consultado. É feita uma consulta ao site da Wikipedia e com o uso da bilioteca Beatifulsoup é feito uma Web Scraping da tabela com as informações básicas do artista, o resultado é tratado e depois pode ser exibido em formato JSON ou armazenado em banco de dados NoSQL MongoDB.
+A Vinylhunter também permite ao usuário obter uma minibiografia do artista consultado. A API realiza uma consulta ao site da Wikipedia e com o uso da bilioteca Beatifulsoup é feito uma Web Scraping da tabela com as informações básicas do artista, o resultado é tratado e depois pode ser exibido em formato JSON ou armazenado em banco de dados NoSQL MongoDB.
 
 
 ## 💻 Funcionalidades
@@ -56,8 +56,8 @@ A Vinylhunter também permite ao usuário obter uma mini bigrafia do artista con
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Python](https://www.python.org/). 
-Além disto é recomendável utilizar um editor para trabalhar com o código como o [VSCode](https://code.visualstudio.com/).
-A API do Discogs para um uso com todas as suas funcionalidades requer a geração de um token, um cadastro será necessário no [site oficialn](https://www.discogs.com/developers)
+Além disso, é recomendável utilizar um editor para trabalhar com o código como o [VSCode](https://code.visualstudio.com/).
+Para o uso da API do Discogs com todas as funcionalidades necessárioas para a execução pro projeto é necessário a geração de um token, para isso, deverá ser feito um cadastro no [site oficialn](https://www.discogs.com/developers)
 
 
 ### Instalação
@@ -162,6 +162,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## 🔎 Implementações futuras
 
 - [ ] Incluir novas verificações
+- [ ] Permitir a listagem de todas as versões de um álbum específico do artista
 - [ ] Criar middlewares e funções utils
 - [ ] Fazer o deploy da API 
 
