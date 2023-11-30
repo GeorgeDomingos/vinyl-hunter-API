@@ -36,7 +36,7 @@
 
 A Vinyhunter API foi desenvolvida como trabalho final do módulo de Introdução à Engenharia de Dados do Programa FAST - Formação Acelerada em Análise e visualização de Dados - CESAR School. O projeto foi criado para aplicar os conceitos de ETL (Extract, Transform e Load) e Web Scraping.
 
-O projeto usa a API do Discogs como fonte de dados para extrair informações sobre os discos que possuam versões na mídia vinil existentes com base no artista consultado. Em uma segunda etapa, é feito o tratamento da consulta obtida e a formatação com as informações mais relevantes (id, título, gravadora, ano e formato e o país onde o disco foi produzido). Na última etapa, o resultado pode ser exibido em um formato JSON ou armazenado em banco de dados NoSQL MongoDB.
+O projeto usa a API do Discogs como fonte de dados para extrair informações sobre os discos que possuam versões na mídia vinil existentes com base no artista consultado. Em uma segunda etapa, é feito o tratamento da consulta obtida e a formatação com as informações mais relevantes (id, título, gravadora, ano, formato e o país onde o disco foi fabricado). Na última etapa, o resultado pode ser exibido em um formato JSON ou armazenado em banco de dados NoSQL MongoDB.
 
 A Vinylhunter também permite ao usuário obter uma minibiografia do artista consultado. A API realiza uma consulta ao site da Wikipedia e com o uso da bilioteca Beatifulsoup é feito uma Web Scraping da tabela com as informações básicas do artista, o resultado é tratado e depois pode ser exibido em formato JSON ou armazenado em banco de dados NoSQL MongoDB.
 
